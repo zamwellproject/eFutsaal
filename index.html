@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#071b16"><title>eFutsal 3D</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div id="app">
+<section id="menu" class="screen menu-screen">
+<header class="brand"><div class="brand-mark">EF</div><div><h1>eFutsal <span>3D</span></h1><small>THE 5-A-SIDE ARENA</small></div></header>
+<div class="menu-card"><h2>Match Setup</h2><div class="field-row"><label>Mode</label><select id="mode"><option value="ai">VS AI BOT</option><option value="online">ONLINE MULTIPLAYER</option></select></div>
+<div class="field-row"><label>Durasi</label><select id="duration"><option value="3">3 menit</option><option value="4">4 menit</option><option value="5" selected>5 menit</option><option value="6">6 menit</option><option value="7">7 menit</option></select></div>
+<div class="field-row"><label>Tim kamu</label><select id="team"></select></div><button id="customize" class="secondary">PICK & CUSTOMIZE</button><button id="start" class="primary">KICK OFF</button><button id="admin-open" class="ghost">ADMIN / PLAYER EDITOR</button><div id="room-area" hidden><label>Room Code</label><input id="room-code" maxlength="8" placeholder="Kode room"><button id="join-room" class="secondary">JOIN ROOM</button></div>
+</div><div id="custom-panel" class="menu-card" hidden><h2>Squad Setup</h2><div id="squad-slots"></div><div class="field-row"><label>Jersey utama</label><input type="color" id="kit-primary" value="#087f5b"></div><div class="field-row"><label>Jersey aksen</label><input type="color" id="kit-accent" value="#e9f5ef"></div><button id="custom-save" class="primary">SIMPAN SQUAD</button></div>
+</section>
+<section id="game" class="screen game-screen" hidden><div id="canvas-wrap"></div><div class="hud"><div class="score"><div><span id="score-home">0</span><small id="home-label">EVR</small></div><b id="clock">05:00</b><div><span id="score-away">0</span><small>BOT</small></div></div><div class="hud-top"><button id="pause">PAUSE</button><button id="exit">EXIT</button></div><div id="event-message"></div><div id="online-timer" hidden></div></div>
+<div class="controls"><div id="joystick" class="joystick"><div id="stick" class="stick"></div></div><div class="action-buttons"><button data-action="pass">PASS</button><button data-action="through">THROUGH</button><button data-action="curve">CURVE</button><button data-action="shoot" class="shoot">SHOOT</button><button data-action="sprint">SPRINT</button><button data-action="switch">SWITCH</button></div></div></section>
+<div id="admin" class="modal" hidden><div class="modal-card"><button class="close" id="admin-close">×</button><h2>Player Admin</h2><p>Tambah pemain / reset data roster.</p><form id="player-form"><input name="name" placeholder="Nama pemain" required><input name="number" type="number" min="1" max="99" placeholder="Nomor" required><select name="position"><option>Anchor</option><option>Pivot</option><option>Flank Kanan</option><option>Flank Kiri</option><option>GK</option></select><div class="stats-grid"><label>Speed<input name="speed" type="number" min="1" max="100" value="70"></label><label>Shoot<input name="shoot" type="number" min="1" max="100" value="70"></label><label>Pass<input name="pass" type="number" min="1" max="100" value="70"></label><label>Dribble<input name="dribble" type="number" min="1" max="100" value="70"></label><label>Defense<input name="defense" type="number" min="1" max="100" value="70"></label><label>GK Handling<input name="gkHandling" type="number" min="1" max="100" value="40"></label></div><button class="primary">ADD PLAYER</button></form><button id="reset-roster" class="ghost">RESET ROSTER</button><div id="admin-list"></div></div></div>
+<div id="toast"></div><script type="module" src="js/main.js"></script></div></body></html>
